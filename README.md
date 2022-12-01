@@ -10,7 +10,7 @@
 É usado para distribuir informação para todos os nós de uma rede conectada
 
 <p align="center">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Usenet_servers_and_clients.svg/800px-Usenet_servers_and_clients.svg.png" width="400" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Usenet_servers_and_clients.svg/800px-Usenet_servers_and_clients.svg.png" width="300" />
 </p>
 
 ### Matemática 
@@ -56,10 +56,6 @@ Flood-fill (node):
  7. Return.
 ```
 
-<p align="center">
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Recursive_Flood_Fill_4_%28aka%29.gif" width="300" />
-</p>
-
 ### Iterative 4-way - Queue or Stack
 
 ```
@@ -79,42 +75,10 @@ Flood-fill (node):
   8. Return.
 ```
 <p align="center">
-<img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Wfm_floodfill_animation_queue.gif" width="250" />
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Wfm_floodfill_animation_stack.gif" width="250" />
+<img src="img/impl-animation.gif" width="600" />
 </p>
 
-### Span Filling
 
-```
-fn fill(x, y):
-  if not Inside(x, y) then return
-  let s = new empty stack or queue
-  add (x, y) to s
-  while s is not empty:
-    Remove an (x, y) from s
-    let lx = x
-    while Inside(lx - 1, y):
-      Set(lx - 1, y)
-      lx = lx - 1
-    while Inside(x, y):
-      Set(x, y)
-      x = x + 1
-    scan(lx, x - 1, y + 1, s)
-    scan(lx, x - 1, y - 1, s)
-
-fn scan(lx, rx, y, s):
-  let added = false
-  for x in lx .. rx:
-    if not Inside(x, y):
-      added = false
-    else if not added:
-      Add (x, y) to s
-      added = true
-```
-
-<p align="center">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Smiley_fill.gif/212px-Smiley_fill.gif" width="300" />
-</p>
 
 ## Referências
 
