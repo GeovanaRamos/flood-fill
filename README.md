@@ -78,7 +78,16 @@ Flood-fill (node):
 <img src="img/impl-animation.gif" width="600" />
 </p>
 
+### Complexidade
 
+<p align="center">
+<img src="img/time_complexity.png" width="400" />
+</p>
+
+
+### Conclusão
+
+É um algoritmo simples de implementar e com várias utilidades. Porém, a solução em Fila ou Pilha pode utilizar muita memória e alguns pixels podem ser visitados muitas vezes.
 
 ## Referências
 
