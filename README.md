@@ -1,6 +1,13 @@
 # Flood-fill
 
-*Flood fill* ou *Algoritmo de Inundação* é um algoritmo usado para determinar ou preencher uma área limitada conectada a um determinado célula/nó em uma matriz/grafo.
+*Flood fill* ou *Seed Fill* é um **Algoritmo de Inundação** usado para determinar ou preencher uma área limitada conectada a uma determinada célula/nó em uma matriz/grafo.
+
+O nome é dado à sua característica similar ao de uma inundação, a qual preenche todos os espaços disponíveis dentro de 
+uma área limitada por alguma fronteira. O algoritmo é simples, porém robusto pois funciona bem em geometrias irregulares 
+e complexas identificando pontos conectados a uma determinada fonte até o seu limite. Além disso, pode ser trivialmente generalizado para
+uma estrutura em grafo. Existe também a possibilidade de aplicar a lógica à outra funcionalidade inversa, a de encontrar
+a fronteira, ou seja, os pontos conectados que cercam uma determinada área. Essa variante é chamada **boundary fill**.
+
 
 ## Aplicações
 <!-- Comentário: aqui cada um pode explicar cada aplicação --> 
@@ -25,6 +32,8 @@
 
 É usado para preencher toda uma área delimitada por uma cor com uma outra cor, a partir de um ponto inicial. 
 
+Esse é o algoritmo normalmente usado para a ferramenta "paint bucket" nos editores de imagem.
+
 <p align="center">
 <img src="https://algomonster.s3.us-east-2.amazonaws.com/flood_fill.png" width="400" />
 </p>
@@ -48,11 +57,11 @@
 ```
 Flood-fill (node):
  1. If node is not Inside return.
- 2. Set the node
- 3. Perform Flood-fill one step to the south of node.
- 4. Perform Flood-fill one step to the north of node
- 5. Perform Flood-fill one step to the west of node
- 6. Perform Flood-fill one step to the east of node
+ 2. Set the node.
+ 3. Perform Flood-fill one step to the east of node.
+ 4. Perform Flood-fill one step to the west of node.
+ 5. Perform Flood-fill one step to the north of node.
+ 6. Perform Flood-fill one step to the south of node.
  7. Return.
 ```
 
@@ -67,8 +76,8 @@ Flood-fill (node):
   5.   Remove first element from Q.
   6.   If n is Inside:
          Set the n
-         Add the node to the west of n to the end of Q.
          Add the node to the east of n to the end of Q.
+         Add the node to the west of n to the end of Q.
          Add the node to the north of n to the end of Q.
          Add the node to the south of n to the end of Q.
   7. Continue looping until Q is exhausted.
